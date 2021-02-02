@@ -6,16 +6,12 @@ import java.util.concurrent.CompletableFuture;
 
 public interface ApplicationContext {
 	/**
-	 * token cache path
-	 *
-	 * @return
+	 * @return Token cache path
 	 */
 	String getLocalDataDir();
 
 	/**
-	 * app instance DIDDocument
-	 *
-	 * @return
+	 * @return App instance DIDDocument
 	 */
 	DIDDocument getAppInstanceDocument();
 
@@ -23,7 +19,8 @@ public interface ApplicationContext {
 	 * This is the interface to make authorization from users, and it would be
 	 * provided by application.
 	 *
-	 * @return
+	 * @param jwtToken Sign in challenge jwt
+	 * @return User authorization token
 	 */
 	CompletableFuture<String> getAuthorization(String jwtToken);
 }
