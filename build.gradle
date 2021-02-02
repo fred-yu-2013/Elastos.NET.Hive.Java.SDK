@@ -76,6 +76,7 @@ task createjavadoc(type: Javadoc) {
             "**/Client.java",
             "**/SdkVersion.java",
             "**/Vault.java",
+            "**/Result.java",
 
             //interface
             "**/Database.java",
@@ -141,8 +142,10 @@ task createjavadoc(type: Javadoc) {
             //org.elastos.hive.exception
             "**/HiveException.java",
             "**/FileNotFoundException.java",
+            "**/ProviderNotSetException.java",
             "**/UnsupportFileTypeException.java",
             "**/VaultAlreadyExistException.java",
+            "**/VaultNotFoundException.java",
     )
     source = sourceSets.main.java.srcDirs
     destinationDir = file("doc/")
