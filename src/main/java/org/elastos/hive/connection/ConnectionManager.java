@@ -139,6 +139,7 @@ public class ConnectionManager {
 				.baseUrl(baseUrl)
 				.addConverterFactory(StringConverterFactory.create())
 				.addConverterFactory(NobodyConverterFactory.create())
+				.addConverterFactory(HttpGsonConverterFactory.create())
 				.addConverterFactory(GsonConverterFactory.create());
 
 		clientBuilder.interceptors().add(requestInterceptor);

@@ -61,10 +61,9 @@ class FilesServiceRender implements FilesService {
 
 	private List<FileInfo> listImpl(String path) {
 		try {
-			Response<FilesListResponseBody> response = connectionManager.getFilesApi().list(path).execute();
-			FilesListResponseBody body = ResponseBodyBase.validateBody(response);
-			return body.getFileInfoList();
-		} catch (HiveException | IOException e) {
+			Response<List<FileInfo>> response = connectionManager.getFilesApi().list(path).execute();
+			return response.body();
+		} catch (IOException e) {
 			throw new CompletionException(new HiveException(e.getMessage()));
 		}
 	}

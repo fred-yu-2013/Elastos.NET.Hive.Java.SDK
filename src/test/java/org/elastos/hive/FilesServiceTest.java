@@ -88,6 +88,7 @@ public class FilesServiceTest {
 				return null;
 			}).get();
 			assertNotNull(files);
+			assertTrue(!files.isEmpty());
 		} catch (Exception e) {
 			e.printStackTrace();
 			fail();
